@@ -24,7 +24,14 @@ namespace App\Http\Controllers {
             $zutatMahl = Zutaten::getZutatDataSpezif($request->mid);
             $kommentare = Kommentare::getKommentSpezif($request->mid);
             $durchschnitt = Kommentare::getDurchschnitt($request->mid);
-            return view('Details',['detailMahl'=>$detailMahl,'bildMahl'=>$bildMahl,'zutatMahl'=>$zutatMahl, 'kommentare'=>$kommentare, 'preis'=>$preis, 'durchschnitt'=>$durchschnitt]);
+
+            return view('Details',['detailMahl'=>$detailMahl,
+                                         'bildMahl'=>$bildMahl,
+                                         'zutatMahl'=>$zutatMahl,
+                                         'kommentare'=>$kommentare,
+                                         'preis'=>$preis,
+                                         'durchschnitt'=>$durchschnitt
+            ]);
         }
     }
 }

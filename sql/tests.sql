@@ -33,3 +33,16 @@ SELECT Zutaten.Name
                          JOIN `enthält_zutaten` ON `enthält_zutaten`.MID = Mahlzeiten.ID
                          JOIN Zutaten ON Zutaten.ID = `enthält_zutaten`.ZID WHERE Mahlzeiten.ID = 1;
                          
+                         
+
+DESCRIBE Kommentare;
+
+ALTER TABLE Kommentare 
+MODIFY COLUMN Bewertung INT;
+
+SELECT * FROM Kommentare;  
+
+DELETE FROM Kommentare;
+
+SELECT Benutzer.Nutzername FROM Benutzer 
+JOIN Studenten ON StudID = Benutzer.Nummer

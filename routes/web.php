@@ -21,3 +21,7 @@ Route::get('/login', function() {
     return view('Login');
 });
 Route::post('/login','LoginController@show');
+Route::get('/registrieren',function() {
+    return view('Registrieren');
+});
+Route::post('/registrieren','RegistrierenController@show');

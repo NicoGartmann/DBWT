@@ -34,4 +34,23 @@ class Kommentare extends Model {
             ->where('MID',$mid)
             ->avg('Bewertung');
     }
+
+    /**
+     * Liefert die Gesamtanzahl der Kommentare zurück
+     * @param $mid
+     * @return int
+     */
+    public static function getAnzahl($mid) {
+        return DB::table('Kommentare')
+            ->where('MID',$mid)
+            ->count('*');
+    }
+
+
+    public static function getAnzahlEinzel($mid, $bewertung) {
+        return DB::table('Kommentare')
+            ->where([['MID',$mid], ['Bewertung',$bewertung]])
+            ->count('*');
+    }
+
 }
